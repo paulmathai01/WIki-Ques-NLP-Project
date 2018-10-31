@@ -16,12 +16,6 @@ SAMPLE_ARTICLES = (
 @click.argument('titles', nargs=-1)
 @click.option('--output', type=click.File('w'), help='Output to JSON file')
 def generate_trivia(titles, output):
-    """Generates trivia questions from wikipedia articles. If no
-    titles are supplied, pulls from these sample articles:
-
-    'Tony Bennett', 'Gauls', 'Scabbling', 'Henry V, Duke of Carinthia',
-    'Ukrainian Women\'s Volleyball Super League'
-    """
     # Use the sample articles if the user didn't supply any
     if len(titles) == 0:
         titles = SAMPLE_ARTICLES
